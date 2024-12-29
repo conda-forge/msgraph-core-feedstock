@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/msgraph-core-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/msgraph-core-{{ version }}.tar.gz
   sha256: f26bcbbb3cd149dd7f1613159e0c2ed862888d61bfd20ef0b08b9408eb670c9d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=65.5.0
     - wheel
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - microsoft-kiota-abstractions >=1.0.0,<2.0.0
     - microsoft-kiota-authentication-azure >=1.0.0,<2.0.0
     - microsoft-kiota-http >=1.0.0,<2.0.0
@@ -34,12 +34,9 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
-  summary: Core component of the Microsoft Graph Python SDK
-  license: MIT
-  license_file: LICENSE
-
   home: https://github.com/microsoftgraph/msgraph-sdk-python-core
   summary: Core abstractions for kiota generated libraries in Python
   license: MIT
