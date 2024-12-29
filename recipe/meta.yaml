@@ -37,10 +37,6 @@ test:
     - python {{ python_min }}
 
 about:
-  summary: Core component of the Microsoft Graph Python SDK
-  license: MIT
-  license_file: LICENSE
-
   home: https://github.com/microsoftgraph/msgraph-sdk-python-core
   summary: Core abstractions for kiota generated libraries in Python
   license: MIT
