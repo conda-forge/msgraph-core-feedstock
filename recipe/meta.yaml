@@ -1,5 +1,5 @@
 {% set name = "msgraph-core" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/msgraph_core-{{ version }}.tar.gz
-  sha256: a4e42f692e664c60d63359e610bbf990f57b42d8080417261ff7042bbd59c98b
+  sha256: 87a3cb4d36dad590a3f02aaedf422547cbac10460bd9f0b6c984fab9556150d3
 
 build:
   noarch: python
