@@ -1,5 +1,5 @@
 {% set name = "msgraph-core" %}
-{% set version = "1.3.8" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/msgraph_core-{{ version }}.tar.gz
-  sha256: 6e883f9d4c4ad57501234749e07b010478c1a5f19550ef4cf005bbcac4a63ae7
+  sha256: 5f0dee9564a0e20edfb2eb7137fe189d7d204a80a87d6d83d69d31269376e1b1
 
 build:
   noarch: python
@@ -22,9 +22,9 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - microsoft-kiota-abstractions >=1.8.0,<2.0.0
-    - microsoft-kiota-authentication-azure >=1.8.0,<2.0.0
-    - microsoft-kiota-http >=1.8.0,<2.0.0
+    - microsoft-kiota-abstractions >=1.10.1,<2.0.0
+    - microsoft-kiota-authentication-azure >=1.10.1,<2.0.0
+    - microsoft-kiota-http >=1.10.1,<2.0.0
     - httpx >=0.23.0
 
 test:
