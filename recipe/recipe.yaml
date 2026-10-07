@@ -20,21 +20,26 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
+    - pip
     - setuptools >=65.5.0
     - wheel
-    - pip
   run:
     - python >=${{ python_min }}
     - microsoft-kiota-abstractions >=1.13.0,<2.0.0
     - microsoft-kiota-authentication-azure >=1.13.0,<2.0.0
     - microsoft-kiota-http >=1.13.0,<2.0.0
     - httpx >=0.23.0
+    # start httpx[http2]
+    - h2 >=3,<5
+    # end httpx[http2]
 tests:
   - python:
       imports:
         - msgraph_core
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}
+        - "*"
 
 about:
   summary: Core abstractions for kiota generated libraries in Python
